@@ -1,0 +1,53 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gestione {
+  margin: 15%;
+}
+
+.login-form {
+  max-width: 300px;
+  margin-top: 34vh;
+}
+
+.deleteCross {
+  text-align: right;
+  margin-top: 15px;
+}
+
+.admin {
+  margin-top: 15px;
+}
+
+
+.login-form-forgot {
+  float: right;
+}
+
+.myInput {
+  margin-top: 20px;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.error {
+  color: red;
+}
+
+.plusCircle {
+  text-align: center;
+}
+.ant-btn-circle, .ant-btn-circle-outline{
+    width: 32px;
+    padding: 0;
+    font-size: 21px;
+    border-radius: 50%;
+    height: 32px;
+}
+
+
