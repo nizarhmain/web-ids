@@ -5,7 +5,7 @@
 }
 
 .gestione {
-  margin: 15%;
+  margin: 6%;
 }
 
 .hey {
@@ -16,6 +16,10 @@
 .login-form {
   max-width: 300px;
   margin-top: 34vh;
+}
+
+.ant-list-item {
+  text-align: center;
 }
 
 .deleteCross {
@@ -46,6 +50,7 @@
 
 .plusCircle {
   text-align: center;
+  margin-bottom: 60px;
 }
 .ant-btn-circle, .ant-btn-circle-outline{
     width: 32px;

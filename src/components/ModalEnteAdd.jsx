@@ -62,7 +62,7 @@ class ModalEnteAdd extends Component {
     const { nome, regione, provincia, password, image } = this.state;
     return (
       <div>
-        <div className="plusCircle"><Button onClick={this.showModal} shape="circle" icon="plus" /></div>
+        <div className="plusCircle"><Button onClick={this.showModal} icon="plus">Aggiungi un Ente</Button> </div>
         <Modal
           title="Basic Modal"
           visible={this.state.visible}

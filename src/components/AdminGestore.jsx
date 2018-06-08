@@ -29,7 +29,8 @@ export default class AdminGestore extends Component {
                 />
 
                 <List
-                    itemLayout="vertical"
+                    grid={{ gutter: 10, column: 3 }}
+                    itemLayout="horizontal"
                     size="large"
                     pagination={{
                         onChange: (page) => {

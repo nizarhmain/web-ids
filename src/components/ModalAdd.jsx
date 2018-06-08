@@ -62,7 +62,7 @@ class ModalAdd extends Component {
     const { nome, tipo, coordinate, url, descrizione } = this.state;
     return (
       <div>
-        <div className="plusCircle"><Button onClick={this.showModal} shape="circle" icon="plus" /></div>
+        <div className="plusCircle"><Button onClick={this.showModal} icon="plus">Aggiungi un POI</Button> </div>
         <Modal
           title="Basic Modal"
           visible={this.state.visible}

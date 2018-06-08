@@ -31,7 +31,7 @@ class Gestore extends Component {
                 fetchStuff={this.props.fetchData}
                 />
 
-                <h1>Hello {this.state.userName}</h1>
+                <h1>Ciao {this.state.userName}</h1>
                 <List
                     itemLayout="vertical"
                     size="large"
