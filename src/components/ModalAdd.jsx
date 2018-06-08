@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const { TextArea } = Input;
 
-class ModalEnteAdd extends React.Component {
+class ModalAdd extends Component {
   state = { visible: false }
 
   componentDidMount() {
@@ -41,8 +41,7 @@ class ModalEnteAdd extends React.Component {
             image: url
           }
       })
-      .then((response) => console.log(response),
-            this.props.fetchStuff(this.props.userName))
+      .then((response) => this.props.fetchStuff())
       .catch((err) => console.log(err));
   }
 
@@ -81,4 +80,4 @@ class ModalEnteAdd extends React.Component {
   }
 }
 
-export default ModalEnteAdd;
+export default ModalAdd;

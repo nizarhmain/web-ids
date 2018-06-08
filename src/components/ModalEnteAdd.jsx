@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const { TextArea } = Input;
 
-class ModalAdd extends React.Component {
+class ModalEnteAdd extends Component {
   state = { visible: false }
 
   componentDidMount() {
@@ -23,22 +23,21 @@ class ModalAdd extends React.Component {
   }
 
   postPoi() {
-    const { nome, tipo, coordinate, url, descrizione } = this.state;
+    const { nome, regione, provincia, password, image } = this.state;
     // GET profile info
     axios({
         method: 'POST',
-        url: `${host}/poi`,
+        url: `${host}/ente`,
         auth: {
           username: this.props.userName,
           password: this.props.password
         },
         data: {
-            name: nome,
-            type: tipo,
-            info: descrizione,
-            ente: this.props.userName,
-            coordinates: coordinate,
-            image: url
+            nome: nome,
+            regione: regione,
+            provincia: provincia,
+            password: password,
+            image: image
           }
       })
       .then((response) => this.props.fetchStuff())
@@ -53,13 +52,14 @@ class ModalAdd extends React.Component {
   }
 
   onChangeNome = (e) => {this.setState({ nome: e.target.value });}
-  onChangeTipo = (e) => {this.setState({ tipo: e.target.value });}
-  onChangeCoordinate = (e) => {this.setState({ coordinate: e.target.value });}
-  onChangeUrl = (e) => {this.setState({ url: e.target.value });}
-  onChangeDescrizione = (e) => {this.setState({ descrizione: e.target.value });}
+  onChangeRegione = (e) => {this.setState({ regione: e.target.value });}
+  onChangeProvincia = (e) => {this.setState({ provincia: e.target.value });}
+  onChangePassword = (e) => {this.setState({ password: e.target.value });}
+  onChangeImage = (e) => {this.setState({image: e.target.value}) }  
+
 
   render() {
-    const { nome, tipo, coordinate, url, descrizione } = this.state;
+    const { nome, regione, provincia, password, image } = this.state;
     return (
       <div>
         <div className="plusCircle"><Button onClick={this.showModal} shape="circle" icon="plus" /></div>
@@ -70,14 +70,14 @@ class ModalAdd extends React.Component {
           onCancel={this.handleCancel}
         >
           <Input className="myInput" placeholder="Nome" value={nome} onChange={this.onChangeNome}/>
-          <Input className="myInput" placeholder="tipo" value={tipo} onChange={this.onChangeTipo}/>
-          <Input className="myInput" placeholder="Coordinate" value={coordinate} onChange={this.onChangeCoordinate}/>
-          <Input className="myInput" placeholder="url dell'imagine" value={url} onChange={this.onChangeUrl}/>
-          <TextArea className="myInput" placeholder="Descrizione" value={descrizione} autosize={{ minRows: 4 }} onChange={this.onChangeDescrizione}/>
+          <Input className="myInput" placeholder="regione" value={regione} onChange={this.onChangeRegione}/>
+          <Input className="myInput" placeholder="provincia" value={provincia} onChange={this.onChangeProvincia}/>
+          <Input className="myInput" placeholder="password" value={password} onChange={this.onChangePassword}/>
+          <Input className="myInput" placeholder="image" value={image} onChange={this.onChangeImage}/>
         </Modal>
       </div>
     );
   }
 }
 
-export default ModalAdd;
+export default ModalEnteAdd;
